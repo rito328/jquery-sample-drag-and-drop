@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>drag and drop | jQuery JavaScript</title>
+</head>
+<body>
+<style>
+  body {
+    margin: 10px;
+  }
+  #listWithHandle div {
+    float: left;
+    margin-left: 5px;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #00A5E3;
+    font-size: 24px;
+    text-align: center;
+  }
+  #listWithHandle div:hover {
+    cursor: move;
+  }
+</style>
+
+<div id="listWithHandle">
+  <div>01</div>
+  <div>02</div>
+  <div>03</div>
+  <div>04</div>
+  <div>05</div>
+  <div>06</div>
+  <div>07</div>
+  <div>08</div>
+  <div>09</div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/Sortable/Sortable.min.js"></script>
+<script>
+  $(function(){
+    Sortable.create(listWithHandle, {
+      animation: 150,
+    });
+  });
+</script>
+</body>
+</html>
