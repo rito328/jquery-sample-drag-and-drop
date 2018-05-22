@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>drag and drop | jQuery JavaScript</title>
+</head>
+<body>
+<style>
+  body {
+    margin: 10px;
+  }
+  .list {
+    float: left;
+  }
+  .list li {
+    padding: 5px 10px;
+    border: 1px solid #0c5460;
+    list-style: none;
+  }
+  .list li:hover {
+    cursor: move;
+  }
+  .a { background-color: #a2c2e6; }
+  .b { background-color: #f3981d; }
+  .c { background-color: #a4d5bd; }
+</style>
+
+<div class="container">
+  <div class="lists_wrap">
+    <ul class="list" id="list1">
+      <li class="a">AAA 1</li>
+      <li class="a">AAA 2</li>
+      <li class="a">AAA 3</li>
+      <li class="a">AAA 4</li>
+      <li class="a">AAA 5</li>
+    </ul>
+    <ul class="list" id="list2">
+      <li class="b">BBB 1</li>
+      <li class="b">BBB 2</li>
+      <li class="b">BBB 3</li>
+      <li class="b">BBB 4</li>
+      <li class="b">BBB 5</li>
+    </ul>
+    <ul class="list" id="list3">
+      <li class="c">CCC 1</li>
+      <li class="c">CCC 2</li>
+      <li class="c">CCC 3</li>
+      <li class="c">CCC 4</li>
+      <li class="c">CCC 5</li>
+    </ul>
+  </div>
+</div>
+
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/Sortable/Sortable.min.js"></script>
+<script>
+  $(function(){
+    Sortable.create(list1, {
+      sort: 1,
+      group: {
+        name: 'common_lists',
+        pull: 'clone', // コピー
+        pull: true,    // 移動
+        put: true
+      },
+      animation: 150
+    });
+    Sortable.create(list2, {
+      sort: 1,
+      group: {
+        name: 'common_lists',
+        pull: true,
+        put: true
+      },
+      animation: 150
+    });
+    Sortable.create(list3, {
+      sort: 1,
+      group: {
+        name: 'common_lists',
+        pull: true,
+        put: true
+      },
+      animation: 150
+    });
+  });
+</script>
+</body>
+</html>
